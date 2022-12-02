@@ -1,0 +1,14 @@
+tenant: public
+namespace: default
+name: SampleWindowFunction
+className: org.apache.pulsar.functions.watermark.SampleWindowFunction
+
+topicsPattern: "persistent://public/default/sample"
+subscriptionPosition: "Earliest"
+autoAck: true
+parallelism: 1
+
+windowConfig:
+  windowLengthDurationMs: 5000
+  watermarkEmitIntervalMs: 1000
+  timestampExtractorClassName: org.apache.pulsar.functions.watermark.SampleTimestampExtractor
